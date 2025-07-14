@@ -11,7 +11,7 @@ export const podcasts = pgTable("podcasts", {
   website: text("website"),
   author: text("author"),
   language: text("language"),
-  categories: jsonb("categories").$type<string[]>().default([]),
+  categories: text("categories").array().default([]),
   subscribed: boolean("subscribed").default(false),
   lastUpdated: timestamp("last_updated").defaultNow(),
   createdAt: timestamp("created_at").defaultNow(),
