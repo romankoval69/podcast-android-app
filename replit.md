@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern podcast application built with React, Express, and TypeScript. The app follows a full-stack architecture with a React frontend and Express backend, using PostgreSQL for data storage through Drizzle ORM. The application provides podcast subscription management, episode playback, queue management, and offline download capabilities.
+This is a modern podcast application built with React, Express, and TypeScript that has been successfully converted to a native Android app using Capacitor. The app follows a full-stack architecture with a React frontend and Express backend, using PostgreSQL for data storage through Drizzle ORM. The application provides podcast subscription management, episode playback, queue management, and offline download capabilities, now available as both a web app and native Android application.
 
 ## User Preferences
 
@@ -127,4 +127,19 @@ Preferred communication style: Simple, everyday language.
 - **Component Library**: Radix UI for accessibility, shadcn/ui for consistent design
 - **Theme System**: CSS variables for light/dark mode with system preference detection
 
-This architecture provides a solid foundation for a podcast application with room for future enhancements like push notifications, social features, and advanced audio processing.
+## Recent Changes
+
+### Android App Conversion (January 2025)
+- **Capacitor Integration**: Successfully converted web app to native Android app
+- **Native Features Added**: Status bar controls, splash screen, haptic feedback, background audio
+- **Mobile Optimizations**: Touch-friendly interface, offline detection, device integration
+- **Build System**: Android Studio project ready for APK generation and Google Play Store
+- **File Structure**: Created `android/` directory with native Android project files
+- **Documentation**: Added comprehensive Android build guide (`ANDROID_BUILD_GUIDE.md`)
+
+### App Identity
+- **App ID**: `com.podcastapp.mobile`
+- **App Name**: PodcastApp
+- **Platform**: Web + Android (via Capacitor)
+
+This architecture provides a solid foundation for a podcast application with room for future enhancements like push notifications, social features, and advanced audio processing. The Android version maintains full feature parity with the web app while adding native mobile capabilities.
