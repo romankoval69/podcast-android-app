@@ -6,7 +6,7 @@
 - Updated Android Gradle Plugin to 7.2.1 (compatible with Android Studio)
 - Updated Gradle wrapper to 7.5.1
 - **Fixed Java Version**: Updated from Java 21 to Java 11 (compatible with AGP 7.2.1)
-- **Downgraded Capacitor**: Using v5.x for maximum compatibility with older AGP
+- **Downgraded Capacitor**: Using v4.x for native AGP 7.2.1 compatibility
 - **Custom AGP Override**: Created custom build patches to force AGP 7.2.1 across all modules
 - Updated compile SDK to 33 for stable compatibility
 - **Re-download the project** if you downloaded it before this fix

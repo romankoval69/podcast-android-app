@@ -136,7 +136,7 @@ Preferred communication style: Simple, everyday language.
 - **Build System**: Android Studio project ready for APK generation and Google Play Store
 - **File Structure**: Created `android/` directory with native Android project files
 - **Documentation**: Added comprehensive Android build guide (`ANDROID_BUILD_GUIDE.md`)
-- **Version Compatibility**: Fixed multiple build issues by downgrading to Capacitor v5.x, AGP 7.2.1, Gradle 7.5.1, and Java 11
+- **Version Compatibility**: Fixed multiple build issues by downgrading to Capacitor v4.x, AGP 7.2.1, Gradle 7.5.1, and Java 11
 - **Build Fixes**: Created automatic fix script (`fix-capacitor-agp.sh`) to handle version compatibility issues
 
 ### App Identity
