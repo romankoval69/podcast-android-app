@@ -141,6 +141,11 @@ Your Android project should now build successfully in Android Studio! Try these 
 - This patches the generated Capacitor files to use AGP 7.2.1
 - Then try building again in Android Studio
 
+**Note about deprecation warnings:**
+- You may see "Deprecated Gradle features were used" warnings - these are normal
+- They don't prevent the app from building or running
+- The warnings are suppressed in gradle.properties for a cleaner build output
+
 ## 🔧 Configuration
 
 ### App Identity
