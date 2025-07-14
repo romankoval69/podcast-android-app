@@ -9,15 +9,16 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
-    implementation project(':capacitor-app')
-    implementation project(':capacitor-device')
-    implementation project(':capacitor-filesystem')
-    implementation project(':capacitor-haptics')
-    implementation project(':capacitor-keyboard')
-    implementation project(':capacitor-network')
-    implementation project(':capacitor-preferences')
-    implementation project(':capacitor-splash-screen')
-    implementation project(':capacitor-status-bar')
+    // Use AAR dependencies instead of project references for AGP 7.2.1 compatibility
+    implementation 'com.capacitorjs:capacitor-app:4.1.1'
+    implementation 'com.capacitorjs:capacitor-device:4.1.0'
+    implementation 'com.capacitorjs:capacitor-filesystem:4.1.4'
+    implementation 'com.capacitorjs:capacitor-haptics:4.1.0'
+    implementation 'com.capacitorjs:capacitor-keyboard:4.1.1'
+    implementation 'com.capacitorjs:capacitor-network:4.1.0'
+    implementation 'com.capacitorjs:capacitor-preferences:4.0.2'
+    implementation 'com.capacitorjs:capacitor-splash-screen:4.2.0'
+    implementation 'com.capacitorjs:capacitor-status-bar:4.1.1'
 
 }
 
