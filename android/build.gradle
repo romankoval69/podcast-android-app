@@ -16,7 +16,6 @@ buildscript {
 }
 
 apply from: "variables.gradle"
-apply from: "capacitor-android-override.gradle"
 
 allprojects {
     repositories {
