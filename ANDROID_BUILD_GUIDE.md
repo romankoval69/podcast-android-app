@@ -143,9 +143,10 @@ Your Android project should now build successfully in Android Studio! Try these 
 - Then try building again in Android Studio
 
 **Technical Details:**
-- Uses AAR (Android Archive) dependencies instead of project references
-- This avoids build configuration attribute conflicts with AGP 7.2.1
-- All Capacitor plugins are loaded from Maven Central instead of local projects
+- Patches all Capacitor plugin build files to use AGP 7.2.1
+- Adds necessary namespace declarations and build features
+- Ensures Java 11 compatibility across all modules
+- Fixes build configuration attribute conflicts
 
 **Note about deprecation warnings:**
 - You may see "Deprecated Gradle features were used" warnings - these are normal

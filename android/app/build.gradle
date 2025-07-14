@@ -36,8 +36,7 @@ dependencies {
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
     
-    // Use AAR dependencies instead of project dependencies for better AGP 7.2.1 compatibility
-    implementation 'com.capacitorjs:capacitor-android:4.8.1'
+    implementation project(':capacitor-android')
     
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
