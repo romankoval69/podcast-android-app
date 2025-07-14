@@ -1,0 +1,25 @@
+// Custom AGP override for Capacitor Android compatibility
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.1'
+    }
+}
+
+// Override for all capacitor modules
+allprojects {
+    afterEvaluate { project ->
+        if (project.name.startsWith('capacitor-')) {
+            android {
+                compileSdkVersion 33
+                defaultConfig {
+                    minSdkVersion 22
+                    targetSdkVersion 33
+                }
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_11
+                    targetCompatibility JavaVersion.VERSION_11
+                }
+            }
+        }
+    }
+}
