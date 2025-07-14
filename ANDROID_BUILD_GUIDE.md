@@ -2,6 +2,12 @@
 
 ## 📱 Android App Successfully Set Up!
 
+**⚠️ IMPORTANT: Version Compatibility Fixed**
+- Updated Android Gradle Plugin to 7.2.1 (compatible with most Android Studio versions)
+- Updated Gradle wrapper to 7.5.1
+- Updated all dependencies to compatible versions
+- **Re-download the project** if you downloaded it before this fix
+
 Your podcast web app has been successfully converted to an Android app using Capacitor. The Android project is now ready for building and testing.
 
 ## 🎯 What's Been Done
