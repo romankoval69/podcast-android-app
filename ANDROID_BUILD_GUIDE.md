@@ -138,8 +138,14 @@ Your Android project should now build successfully in Android Studio! Try these 
 
 **If you still get AGP version errors after sync:**
 - Run the fix script: `./fix-capacitor-agp.sh`
-- This patches the generated Capacitor files to use AGP 7.2.1
+- This converts project dependencies to AAR dependencies for AGP 7.2.1 compatibility
+- Patches generated Capacitor files to use AGP 7.2.1
 - Then try building again in Android Studio
+
+**Technical Details:**
+- Uses AAR (Android Archive) dependencies instead of project references
+- This avoids build configuration attribute conflicts with AGP 7.2.1
+- All Capacitor plugins are loaded from Maven Central instead of local projects
 
 **Note about deprecation warnings:**
 - You may see "Deprecated Gradle features were used" warnings - these are normal
