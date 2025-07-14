@@ -18,34 +18,13 @@ if [ -f "android/app/capacitor.build.gradle" ]; then
     sed -i 's/JavaVersion.VERSION_17/JavaVersion.VERSION_11/g' android/app/capacitor.build.gradle
 fi
 
-# Create a custom build.gradle override for the main capacitor library
-cat > android/capacitor-android-override.gradle << 'EOF'
-// Custom AGP override for Capacitor Android compatibility
-buildscript {
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
-    }
-}
+# Remove the override file if it exists to prevent conflicts
+if [ -f "android/capacitor-android-override.gradle" ]; then
+    rm android/capacitor-android-override.gradle
+fi
 
-// Override for all capacitor modules
-allprojects {
-    afterEvaluate { project ->
-        if (project.name.startsWith('capacitor-')) {
-            android {
-                compileSdkVersion 33
-                defaultConfig {
-                    minSdkVersion 22
-                    targetSdkVersion 33
-                }
-                compileOptions {
-                    sourceCompatibility JavaVersion.VERSION_11
-                    targetCompatibility JavaVersion.VERSION_11
-                }
-            }
-        }
-    }
-}
-EOF
+# Ensure the main build.gradle doesn't reference the override
+sed -i '/apply from: "capacitor-android-override.gradle"/d' android/build.gradle
 
 echo "✅ Capacitor AGP compatibility patches applied!"
 echo "Now try building your Android project in Android Studio."
