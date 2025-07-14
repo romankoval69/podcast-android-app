@@ -5,6 +5,7 @@
 **⚠️ IMPORTANT: Version Compatibility Fixed**
 - Updated Android Gradle Plugin to 7.2.1 (compatible with most Android Studio versions)
 - Updated Gradle wrapper to 7.5.1
+- **Fixed Java Version**: Updated from Java 21 to Java 17 (compatible with AGP 7.2.1)
 - Updated all dependencies to compatible versions
 - **Re-download the project** if you downloaded it before this fix
 
