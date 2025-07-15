@@ -136,8 +136,8 @@ Preferred communication style: Simple, everyday language.
 - **Build System**: Android Studio project ready for APK generation and Google Play Store
 - **File Structure**: Created `android/` directory with native Android project files
 - **Documentation**: Added comprehensive Android build guide (`ANDROID_BUILD_GUIDE.md`)
-- **Version Compatibility**: Fixed multiple build issues by downgrading to Capacitor v4.x, AGP 7.2.1, Gradle 7.5.1, and Java 11
-- **Build Fixes**: Created automatic fix script (`fix-capacitor-agp.sh`) to patch all Capacitor plugin build files for AGP 7.2.1 compatibility
+- **Version Compatibility**: Upgraded to latest Android software: Capacitor v7.4.2, AGP 8.11.0, Gradle 8.14.3, Java 17, and Android 15 (API 35)
+- **Build Fixes**: Created automatic fix script (`fix-capacitor-agp.sh`) to patch all Capacitor plugin build files for AGP 8.11.0 compatibility
 
 ### App Identity
 - **App ID**: `com.podcastapp.mobile`
