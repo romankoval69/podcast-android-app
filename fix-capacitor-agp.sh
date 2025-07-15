@@ -1,29 +1,29 @@
 #!/bin/bash
 
 # Script to fix Capacitor AGP version compatibility issues
-# This script patches the Capacitor Android library for AGP 7.2.1 compatibility
+# This script patches the Capacitor Android library for AGP 8.11.0 compatibility
 
 echo "🔧 Fixing Capacitor AGP version compatibility..."
 
 # Fix capacitor-cordova-android-plugins build.gradle
 if [ -f "android/capacitor-cordova-android-plugins/build.gradle" ]; then
     echo "Patching capacitor-cordova-android-plugins/build.gradle..."
-    sed -i 's/com.android.tools.build:gradle:8.0.0/com.android.tools.build:gradle:7.2.1/g' android/capacitor-cordova-android-plugins/build.gradle
-    sed -i 's/JavaVersion.VERSION_17/JavaVersion.VERSION_11/g' android/capacitor-cordova-android-plugins/build.gradle
+    sed -i 's/com.android.tools.build:gradle:7.2.1/com.android.tools.build:gradle:8.11.0/g' android/capacitor-cordova-android-plugins/build.gradle
+    sed -i 's/JavaVersion.VERSION_11/JavaVersion.VERSION_17/g' android/capacitor-cordova-android-plugins/build.gradle
 fi
 
 # Fix capacitor.build.gradle
 if [ -f "android/app/capacitor.build.gradle" ]; then
     echo "Patching app/capacitor.build.gradle..."
-    sed -i 's/JavaVersion.VERSION_17/JavaVersion.VERSION_11/g' android/app/capacitor.build.gradle
+    sed -i 's/JavaVersion.VERSION_11/JavaVersion.VERSION_17/g' android/app/capacitor.build.gradle
 fi
 
 # Fix the main Capacitor Android library
 if [ -f "node_modules/@capacitor/android/capacitor/build.gradle" ]; then
-    echo "Patching Capacitor Android library for AGP 7.2.1..."
+    echo "Patching Capacitor Android library for AGP 8.11.0..."
     
-    # Make sure it uses AGP 7.2.1
-    sed -i 's/com.android.tools.build:gradle:8.0.0/com.android.tools.build:gradle:7.2.1/g' node_modules/@capacitor/android/capacitor/build.gradle
+    # Make sure it uses AGP 8.11.0
+    sed -i 's/com.android.tools.build:gradle:7.2.1/com.android.tools.build:gradle:8.11.0/g' node_modules/@capacitor/android/capacitor/build.gradle
     
     # Add namespace if not present
     if ! grep -q "namespace" node_modules/@capacitor/android/capacitor/build.gradle; then
@@ -40,8 +40,8 @@ fi
 for plugin in app device filesystem haptics keyboard network preferences splash-screen status-bar; do
     if [ -f "node_modules/@capacitor/$plugin/android/build.gradle" ]; then
         echo "Patching $plugin plugin..."
-        sed -i 's/com.android.tools.build:gradle:8.0.0/com.android.tools.build:gradle:7.2.1/g' node_modules/@capacitor/$plugin/android/build.gradle
-        sed -i 's/JavaVersion.VERSION_17/JavaVersion.VERSION_11/g' node_modules/@capacitor/$plugin/android/build.gradle
+        sed -i 's/com.android.tools.build:gradle:7.2.1/com.android.tools.build:gradle:8.11.0/g' node_modules/@capacitor/$plugin/android/build.gradle
+        sed -i 's/JavaVersion.VERSION_11/JavaVersion.VERSION_17/g' node_modules/@capacitor/$plugin/android/build.gradle
         
         # Add namespace if not present
         if ! grep -q "namespace" node_modules/@capacitor/$plugin/android/build.gradle; then
@@ -51,5 +51,5 @@ for plugin in app device filesystem haptics keyboard network preferences splash-
 done
 
 echo "✅ Capacitor AGP compatibility patches applied!"
-echo "✅ All Capacitor libraries updated for AGP 7.2.1"
+echo "✅ All Capacitor libraries updated for AGP 8.11.0"
 echo "Now try building your Android project in Android Studio."

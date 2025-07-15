@@ -2,13 +2,14 @@
 
 ## 📱 Android App Successfully Set Up!
 
-**⚠️ IMPORTANT: Version Compatibility Fixed**
-- Updated Android Gradle Plugin to 7.2.1 (compatible with Android Studio)
-- Updated Gradle wrapper to 7.5.1
-- **Fixed Java Version**: Updated from Java 21 to Java 11 (compatible with AGP 7.2.1)
-- **Downgraded Capacitor**: Using v4.x for native AGP 7.2.1 compatibility
-- **Custom AGP Override**: Created custom build patches to force AGP 7.2.1 across all modules
-- Updated compile SDK to 33 for stable compatibility
+**⚠️ IMPORTANT: Latest Android Software Versions**
+- **Updated Android Gradle Plugin to 8.11.0** (Latest July 2025)
+- **Updated Gradle wrapper to 8.14.3** (Latest July 2025)
+- **Updated Java Version**: Using Java 17 (required for AGP 8.11.0)
+- **Upgraded Capacitor**: Using v7.4.2 (Latest with Android 15 support)
+- **Latest Target SDK**: Updated to SDK 35 (Android 15)
+- **Modern AndroidX Libraries**: Updated to latest versions
+- **Updated compile SDK to 35** for latest Android features
 - **Re-download the project** if you downloaded it before this fix
 
 Your podcast web app has been successfully converted to an Android app using Capacitor. The Android project is now ready for building and testing.
@@ -143,10 +144,11 @@ Your Android project should now build successfully in Android Studio! Try these 
 - Then try building again in Android Studio
 
 **Technical Details:**
-- Patches all Capacitor plugin build files to use AGP 7.2.1
+- Patches all Capacitor plugin build files to use AGP 8.11.0
 - Adds necessary namespace declarations and build features
-- Ensures Java 11 compatibility across all modules
+- Ensures Java 17 compatibility across all modules
 - Fixes build configuration attribute conflicts
+- Supports Android 15 (API level 35) features
 
 **Note about deprecation warnings:**
 - You may see "Deprecated Gradle features were used" warnings - these are normal
