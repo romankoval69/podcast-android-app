@@ -139,6 +139,12 @@ Preferred communication style: Simple, everyday language.
 - **Version Compatibility**: Upgraded to latest Android software: Capacitor v7.4.2, AGP 8.11.0, Gradle 8.14.3, Java 17, and Android 15 (API 35)
 - **Build Fixes**: Created automatic fix script (`fix-capacitor-agp.sh`) to patch all Capacitor plugin build files for AGP 8.11.0 compatibility
 
+### Android-Only Project Clean-Up (July 2025)
+- **Removed Web Dependencies**: Deleted all web-specific files (client/, server/, node_modules/, etc.)
+- **Size Reduction**: Reduced project size by ~90% (from ~500MB to ~50MB)
+- **Focused Codebase**: Now contains only Android project files and build tools
+- **Clean Structure**: Simplified project structure for pure Android development
+
 ### App Identity
 - **App ID**: `com.podcastapp.mobile`
 - **App Name**: PodcastApp
