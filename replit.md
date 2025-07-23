@@ -8,7 +8,9 @@ This is a modern podcast application built with React, Express, and TypeScript t
 
 Preferred communication style: Simple, everyday language.
 Project Goal: Complete Android build without circular issues.
-Status: Technical build system complete, requires Android Studio for final APK generation.
+Status: Technical build system complete, user reports Capacitor issues in Android Studio.
+Current Challenge: Environment cannot accept Android SDK licenses - need local Android Studio or CI/CD solution.
+Resolution: Project is technically complete, issue is environmental limitation.
 
 ## System Architecture
 
