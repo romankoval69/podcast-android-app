@@ -7,6 +7,8 @@ This is a modern podcast application built with React, Express, and TypeScript t
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Project Goal: Complete Android build without circular issues.
+Status: Technical build system complete, requires Android Studio for final APK generation.
 
 ## System Architecture
 
