@@ -3,7 +3,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'com.podcastapp.mobile',
   appName: 'PodcastApp',
-  webDir: 'client/dist',
+  webDir: 'dist',
   server: {
     androidScheme: 'https'
   },
