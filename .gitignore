@@ -1,6 +1,50 @@
-node_modules
-dist
+# Android specific
+android/build/
+android/app/build/
+android/.gradle/
+android/local.properties
+android/captures/
+android/app/release/
+*.apk
+*.aab
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# OS generated files
 .DS_Store
-server/public
-vite.config.ts.*
-*.tar.gz
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+.npm
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Capacitor
+.capacitor/
+ios/
+electron/
