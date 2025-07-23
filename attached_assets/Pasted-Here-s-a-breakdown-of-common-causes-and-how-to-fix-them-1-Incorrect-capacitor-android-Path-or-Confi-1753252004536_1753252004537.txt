@@ -1,0 +1,19 @@
+Here's a breakdown of common causes and how to fix them:1. Incorrect capacitor-android Path or Configuration:•Verify settings.gradle: Ensure your settings.gradle (or settings.gradle.kts) file correctly includes the capacitor-android module. It should look something like this:// settings.gradle
+
+// ... other settings ...
+
+include ':capacitor-android'
+project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/android/capacitor')Make sure the path ../node_modules/@capacitor/android/capacitor correctly points to the capacitor-android directory within your node_modules. The exact path might vary slightly depending on your project structure.•Verify build.gradle (app level): In your app-level build.gradle (or build.gradle.kts) file (usually located at app/build.gradle), ensure you have a dependency on capacitor-android:// app/build.gradle
+
+dependencies {
+    // ... other dependencies ...
+    implementation project(':capacitor-android')
+}2. node_modules Not Installed or Corrupted:•The capacitor-android library is installed as part of your npm or yarn packages. If node_modules is missing, corrupted, or not up-to-date, Gradle won't find the library.•Solution: Delete your node_modules folder and reinstall your project's dependencies:•If using npm:rm -rf node_modules
+npm install•If using yarn:rm -rf node_modules
+yarn install3. Capacitor Not Synced with the Native Project:•After installing or updating Capacitor plugins or the Capacitor core, you need to sync these changes to your native Android project.•Solution: Run the Capacitor sync command:npx capacitor sync androidOr if you have Capacitor CLI installed globally:capacitor sync android4. Gradle Cache Issues:•Sometimes, Gradle's cache can become corrupted, leading to resolution errors.•Solution:1.Invalidate Caches / Restart in Android Studio: Go to "File" > "Invalidate Caches / Restart..." and select "Invalidate and Restart".2.Clean Build: Try cleaning your project with ./gradlew clean in the Android Studio terminal (located in your project's android folder) and then rebuild.5. Incorrect capacitor.config.json (or .ts):•Ensure your capacitor.config.json (or capacitor.config.ts) file has the correct androidProjectDir. While less likely to directly cause a "Failed to resolve" for capacitor-android itself, an incorrect configuration can lead to general build issues. The default is usually android.// capacitor.config.json
+{
+  // ... other configurations ...
+  "android": {
+    "path": "android" // This is the default
+  }
+}Troubleshooting Steps:1.Start with a Clean Slate:•Close Android Studio.•Delete node_modules in your project's root.•Delete the android/build folder.•Delete the android/app/build folder.•Delete the android/.gradle folder (if it exists).2.Reinstall Dependencies:•Open your project's root in a terminal and run npm install (or yarn install).3.Sync Capacitor:•Run npx capacitor sync android.4.Open Android Studio:•Open only the android folder in Android Studio. Don't open the root of your Capacitor project.5.Let Gradle Sync: Wait for Gradle to sync. If it fails, carefully examine the error messages in the "Build" tab.6.Try Invalidate Caches / Restart: If it still fails, try "File" > "Invalidate Caches / Restart...".As the Capacitor documentation suggests, Googling the specific error message you get after trying these steps can often lead to solutions from others who have faced the same problem [1, 2].If you've tried these steps and are still facing issues, please provide more details from the "Build" output in Android Studio, specifically any error messages that appear before or after the "Failed to resolve: project :capacitor-android" line. This will help in pinpointing the exact cause.
