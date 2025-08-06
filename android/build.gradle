@@ -17,6 +17,11 @@ buildscript {
 
 apply from: "variables.gradle"
 
+// Remove Capacitor plugins - we're now pure native Android
+configurations.all {
+    exclude group: 'com.getcapacitor'
+}
+
 allprojects {
     repositories {
         google()
