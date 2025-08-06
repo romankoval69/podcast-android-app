@@ -1,4 +1,4 @@
-package com.getcapacitor.myapp;
+package com.podcastapp.mobile;
 
 import static org.junit.Assert.*;
 

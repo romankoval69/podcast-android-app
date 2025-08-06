@@ -17,10 +17,7 @@ buildscript {
 
 apply from: "variables.gradle"
 
-// Remove Capacitor plugins - we're now pure native Android
-configurations.all {
-    exclude group: 'com.getcapacitor'
-}
+// Pure native Android - no hybrid dependencies
 
 allprojects {
     repositories {
