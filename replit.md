@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a pure native Android podcast application built with modern Android development practices. Originally conceived as a web app, it has been completely converted to a native Android app with no web dependencies. The app provides podcast subscription management, episode playback, queue management, and offline download capabilities using standard Android APIs and Material Design components.
+This is a React Native podcast application built for Android development. The app provides podcast subscription management, episode playback, queue management, and offline download capabilities using React Native with Material Design components (react-native-paper).
 
 ## User Preferences
 
@@ -11,26 +11,27 @@ Project Goal: Complete Android build without circular issues.
 Status: GitHub Actions workflow configured with comprehensive Gradle compatibility fixes.
 Build Configuration: Updated to Gradle 8.4 + AGP 8.1.4 for maximum stability.
 Debug Features: Enhanced warning output (--warning-mode all) for deprecation detection.
-Current Stage: Pure native Android conversion complete - GitHub sync needed for build fix.
+Current Stage: React Native podcast app for Android development - ready for Android Studio build.
 
 ## System Architecture
 
-### Frontend Architecture
-- **Framework**: React 18 with TypeScript
-- **Routing**: Wouter for client-side routing
-- **State Management**: TanStack React Query for server state management
-- **UI Components**: Radix UI with shadcn/ui component library
-- **Styling**: Tailwind CSS with custom theme support (dark/light mode)
-- **Build Tool**: Vite for development and production builds
-- **Mobile-First**: Responsive design optimized for mobile devices
+### React Native Architecture
+- **Framework**: React Native 0.80.2 with TypeScript
+- **UI Library**: React Native Paper (Material Design 3)
+- **Navigation**: React Navigation 7.x with bottom tabs and stack navigation
+- **State Management**: React hooks and local state management
+- **Icons**: React Native Vector Icons (Material Icons)
+- **Audio**: React Native Track Player for professional audio playback
+- **Build Tool**: Metro bundler for React Native development
+- **Platform**: Android-focused with Android Studio integration
 
-### Backend Architecture
-- **Framework**: Express.js with TypeScript
-- **Database**: PostgreSQL with Drizzle ORM
-- **Session Management**: PostgreSQL-backed sessions
-- **API Design**: RESTful endpoints with JSON responses
-- **Development**: Hot module replacement with Vite integration
-- **Production**: Compiled ESM bundle with esbuild
+### Mobile-First Features
+- **Native Performance**: 60fps UI with native Android components
+- **Background Audio**: Professional podcast playback with media controls
+- **Material Design**: Consistent Android UI/UX patterns
+- **Offline Support**: Local storage for subscriptions and downloaded episodes
+- **Push Notifications**: Episode release notifications
+- **Native Integration**: Android intents, file system, and hardware controls
 
 ### Key Components
 

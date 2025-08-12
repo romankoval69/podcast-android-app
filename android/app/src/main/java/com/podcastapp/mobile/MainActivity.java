@@ -1,43 +1,40 @@
 package com.podcastapp.mobile;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactRootView;
 
-public class MainActivity extends AppCompatActivity {
-    
+public class MainActivity extends ReactActivity {
+
+    /**
+     * Returns the name of the main component registered from JavaScript. This is used to schedule
+     * rendering of the component.
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-        // Initialize bottom navigation
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-            int itemId = item.getItemId();
-            
-            if (itemId == R.id.nav_podcasts) {
-                selectedFragment = new PodcastListFragment();
-            } else if (itemId == R.id.nav_player) {
-                selectedFragment = new PlayerFragment();
-            } else if (itemId == R.id.nav_queue) {
-                selectedFragment = new QueueFragment();
-            }
-            
-            if (selectedFragment != null) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, selectedFragment);
-                transaction.commit();
-            }
-            return true;
-        });
-        
-        // Set default fragment
-        if (savedInstanceState == null) {
-            bottomNav.setSelectedItemId(R.id.nav_podcasts);
+    protected String getMainComponentName() {
+        return "PodcastApp";
+    }
+
+    /**
+     * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
+     * you can specify the rendered you wish to use (Fabric or the older renderer).
+     */
+    @Override
+    protected ReactActivityDelegate createReactActivityDelegate() {
+        return new MainActivityDelegate(this, getMainComponentName());
+    }
+
+    public static class MainActivityDelegate extends ReactActivityDelegate {
+        public MainActivityDelegate(ReactActivity activity, String mainComponentName) {
+            super(activity, mainComponentName);
+        }
+
+        @Override
+        protected ReactRootView createRootView() {
+            ReactRootView reactRootView = new ReactRootView(getContext());
+            // If you opted-in for the New Architecture, we enable the Fabric Renderer.
+            reactRootView.setIsFabric(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED);
+            return reactRootView;
         }
     }
 }
